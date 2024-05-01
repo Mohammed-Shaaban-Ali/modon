@@ -1,15 +1,13 @@
-import {useEffect} from "react";
-import {useTranslation} from "react-i18next";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const languages = [
-  {code: "en", lang: "English"},
-  {code: "fr", lang: "French"},
-  {code: "hi", lang: "Hindi"},
-  {code: "ar", lang: "Arabic"},
+  { code: "en", lang: "English" },
+  { code: "ar", lang: "Arabic" },
 ];
 
 const LanguageSelector = () => {
-  const {i18n} = useTranslation();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     document.body.dir = i18n.dir();
