@@ -5,13 +5,17 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 const i18nConfig = {
   debug: false,
-  fallbackLng: "ar",
+  fallbackLng: "en",
   returnObjects: true,
   interpolation: {
     escapeValue: false,
   },
   backend: {
     loadPath: "/locales/{{lng}}/{{ns}}.json",
+  },
+  detection: {
+    order: ["localStorage", "cookie", "navigator"],
+    caches: ["localStorage", "cookie"],
   },
 };
 
