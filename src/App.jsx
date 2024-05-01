@@ -1,26 +1,19 @@
 import LanguageSelector from "./components/language-selector";
-import { Trans, useTranslation } from "react-i18next";
-import "./App.css";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
   const { t } = useTranslation();
-  const { line1, line2 } = t("description", { channel: "RoadsideCoder" });
+
+  const { line1, line2 } = t("description");
+
   return (
-    <div className="container">
+    <div className="container bg-black text-white mx-auto py-8 px-8">
       <LanguageSelector />
       <h1>{t("greeting")}</h1>
       <span>
-        <Trans
-          // i18nKey={"description.line1"}
-          i18nKey={line1}
-          values={{
-            channel: "RoadsideCoder",
-          }}
-          components={{ 1: <b /> }}
-        ></Trans>
+        <span className="text-red-400">{line1}</span>
       </span>
       <span className="text-red-400">{line2}</span>
-      {/* <span>{t("greeting.key", "can't load")}</span> */}
     </div>
   );
 };
